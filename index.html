@@ -1,0 +1,121 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Todo App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="todo-container">
+
+        <!-- Header -->
+        <div class="header">
+            <h1>My Todo List</h1>
+            <button id="themeToggle" title="Toggle Dark Mode">
+                🌙
+            </button>
+        </div>
+
+        <!-- Two Column Layout -->
+        <div class="main-layout">
+
+            <!-- Left Side -->
+            <div class="left-panel">
+
+                <!-- Daily Motivation -->
+                <div class="motivation-box">
+                    <h3>✨ Daily Motivation</h3>
+                    <p id="dailyQuote">
+                        Believe in yourself and keep going!
+                    </p>
+                </div>
+
+                <!-- Add / Edit Task -->
+                <div class="input-section">
+                    <h2>Add New Task</h2>
+
+                    <input
+                        type="text"
+                        id="taskInput"
+                        placeholder="Enter a task..."
+                    >
+
+                    <select id="taskPriority" title="Select Priority">
+                        <option value="Medium">Medium Priority</option>
+                        <option value="High">High Priority</option>
+                        <option value="Low">Low Priority</option>
+                    </select>
+
+                    <label for="taskDateTime">Set Reminder</label>
+
+                    <input
+                        type="datetime-local"
+                        id="taskDateTime"
+                        title="Set reminder date and time"
+                    >
+
+                    <button id="addBtn">+ Add Task</button>
+
+                    <button id="cancelEditBtn" type="button" hidden>
+                        Cancel
+                    </button>
+                </div>
+
+            </div>
+
+            <!-- Right Side -->
+            <div class="right-panel">
+
+                <!-- Progress -->
+                <div class="progress-section">
+                    <div class="progress-info">
+                        <span>Task Progress</span>
+                        <span id="progressText">0 of 0 completed</span>
+                    </div>
+
+                    <div class="progress-bar">
+                        <div id="progressFill"></div>
+                    </div>
+                </div>
+
+                <!-- Filters -->
+                <div class="filters">
+                    <button class="filter active" data-filter="all">
+                        All
+                    </button>
+
+                    <button class="filter" data-filter="active">
+                        Active
+                    </button>
+
+                    <button class="filter" data-filter="completed">
+                        Completed
+                    </button>
+                </div>
+
+                <!-- Task List -->
+                <ul id="taskList"></ul>
+
+                <!-- Footer -->
+                <div class="task-footer">
+                    <span id="taskCount">0 tasks left</span>
+
+                    <button id="clearCompleted">
+                        Clear Completed
+                    </button>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
